@@ -1,0 +1,25 @@
+<h2>Запросы</h2>
+
+{{#if requests.length}}
+<div class="row">
+{{#each requests}}
+  <div class="col s4">
+    <form method="POST" action="/requests/send">
+      <ul class="collection with-header">
+        <li class="collection-item"><b>URL:</b> {{url}}</li>
+        <li class="collection-item"><b>Метод:</b> {{method}}</li>
+        {{#if acceptOptions}}<li class="collection-item"><b>Заголовки Accept</b>: {{acceptOptions}}</li> {{/if}}
+        {{#if contentTypeOptions}}<li class="collection-item"><b>Заголовки Content-Type</b>: {{contentTypeOptions}}</li> {{/if}}
+        {{#if body}}<li class="collection-item"><b>Тело запроса:</b> {{body}}</li>{{/if}}
+      </ul>
+      <a href="/requests/{{id}}/edit">Редактировать</a>
+      <input type="hidden" name="id" value="{{id}}">
+      <button type="submit" class="btn btn-primary">Отправить</button>
+      <a href="/requests/{{id}}/remove">Удалить</a>
+    </form>
+  </div> 
+{{/each}}
+</div> 
+{{else}}
+<p>Сохраненных запросов пока нет. Перейдите на страницу добавления</p>
+{{/if}}

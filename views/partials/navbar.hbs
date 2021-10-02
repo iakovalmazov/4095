@@ -1,0 +1,25 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">notPOSTMAN</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      {{#if isHome}}
+        <li class="active"><a href="/">Главная</a></li>
+      {{else}}
+        <li><a href="/">Главная</a></li>
+      {{/if}}
+
+      {{#if isRequests}}
+        <li class="active"><a href="/requests">Запросы</a></li>
+      {{else}}
+        <li><a href="/requests">Запросы</a></li>
+      {{/if}}
+
+      {{#if isAdd}}
+        <li class="active"><a href="/add">Добавить запрос</a></li>
+      {{else}}
+        <li><a href="/add">Добавить запрос</a></li>
+      {{/if}} 
+    </ul>
+  </div>
+</nav>

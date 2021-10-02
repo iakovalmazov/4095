@@ -1,0 +1,94 @@
+<div class="container">
+  <h2>Редактировать запрос</h2>
+
+  <form method="POST" action="/requests/edit">
+  <div class="input-field col s3">
+    <h5>Введите URL:</h5>
+    <input type="text" name="url" class="validate" required value="{{request.url}}">
+    <h5>Выберите метод:</h5>
+    <p>
+      <label>
+        <input name="method" type="radio" value="GET" {{#if isGet}}checked{{/if}}/>
+        <span>GET</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="method" type="radio" value="POST" {{#if isPost}}checked{{/if}}/>
+        <span>POST</span>
+      </label>
+    </p>
+    <h5>Выберите заголовки:</h5>
+    <div class="row">
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="headers" value="Accept" {{#if isAccept}}checked{{/if}}/>
+            <span>Accept</span>
+          </label>
+        </p>
+      </div>
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="*/*" disabled="disabled" {{#if isAcceptAll}}checked{{/if}}/>
+            <span>*/*</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="text/html" disabled="disabled" {{#if isAcceptHtml}}checked{{/if}}/>
+            <span>text/html</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="application/json" disabled="disabled" {{#if isAcceptJson}}checked{{/if}}/>
+            <span>application/json</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="application/xml" disabled="disabled" {{#if isAcceptXml}}checked{{/if}}/>
+            <span>application/xml</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="headers" value="Content-Type" {{#if isContentType}}checked{{/if}}/>
+            <span>Content-Type</span>
+          </label>
+        </p>
+      </div>
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="contentTypeOptions" value="text/html" disabled="disabled" {{#if isContentTypeHtml}}checked{{/if}}/>
+            <span>text/html</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="contentTypeOptions" value="application/json" disabled="disabled" {{#if isContentTypeJson}}checked{{/if}}/>
+            <span>application/json</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="contentTypeOptions" value="application/xml" disabled="disabled" {{#if isContentTypeXml}}checked{{/if}}/>
+            <span>application/xml</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <h5>Тело запроса:</h5>
+    <textarea name="body" class="materialize-textarea">{{request.body}}</textarea>
+    <input type="hidden" name="id" value="{{request.id}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Сохранить запрос</button>
+  </form>
+</div>

@@ -1,0 +1,93 @@
+<div class="container">
+  <h2>Добавить новый запрос</h2>
+
+  <form method="POST" action="/add">
+  <div class="input-field col s3">
+    <h5>Введите URL:</h5>
+    <input type="text" name="url" class="validate" required>
+    <h5>Выберите метод:</h5>
+    <p>
+      <label>
+        <input name="method" type="radio" value="GET" checked />
+        <span>GET</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="method" type="radio" value="POST"/>
+        <span>POST</span>
+      </label>
+    </p>
+    <h5>Выберите заголовки:</h5>
+    <div class="row">
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="headers" value="Accept"/>
+            <span>Accept</span>
+          </label>
+        </p>
+      </div>
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="*/*" disabled="disabled"/>
+            <span>*/*</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="text/html" disabled="disabled"/>
+            <span>text/html</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="application/json" disabled="disabled"/>
+            <span>application/json</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="acceptOptions" value="application/xml" disabled="disabled"/>
+            <span>application/xml</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="headers" value="Content-Type"/>
+            <span>Content-Type</span>
+          </label>
+        </p>
+      </div>
+      <div class="col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="contentTypeOptions" value="text/html" disabled="disabled"/>
+            <span>text/html</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="contentTypeOptions" value="application/json" disabled="disabled"/>
+            <span>application/json</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="contentTypeOptions" value="application/xml" disabled="disabled"/>
+            <span>application/xml</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <h5>Тело запроса:</h5>
+    <textarea name="body" class="materialize-textarea"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Сохранить запрос</button>
+  </form>
+</div>
